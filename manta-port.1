@@ -1,0 +1,49 @@
+.TH MANTA-PORT 1 "manta-port v1.0.0" "Manta Tools" "User Commands"
+.SH NAME
+manta-port \- local port manager: list, check, and kill processes on ports
+.SH SYNOPSIS
+.B port <command> [options]
+.SH DESCRIPTION
+List all listening ports, check if a specific port is in use, or kill processes occupying a port. Zero external dependencies.
+.SH OPTIONS
+.TP
+.B list
+List all listening ports
+.TP
+.B check <port>
+Check if a port is in use
+.TP
+.B kill <port>
+Kill processes on a port
+.TP
+.B kill -f <port>
+Force kill (SIGKILL instead of SIGTERM)
+.TP
+.B --version
+Show version and exit
+.SH EXAMPLES
+.TP
+List all listening ports
+.B port list
+.TP
+Check if port 3000 is in use
+.B port check 3000
+.TP
+Kill process on port 8080
+.B port kill 8080
+.TP
+Force kill on port 3000
+.B port kill -f 3000
+.SH EXIT CODES
+.TP
+.B 0
+Success
+.TP
+.B 1
+Error or port not found
+.SH AUTHOR
+Bobby Hansen Jr. (Hansen Capital Group LLC)
+.SH REPORTING BUGS
+https://github.com/jrbobbyhansen-pixel/port/issues
+.SH COPYRIGHT
+Copyright 2026 Hansen Capital Group LLC. License MIT.
